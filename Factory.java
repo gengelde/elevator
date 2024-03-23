@@ -4,14 +4,12 @@ public class Factory
     private Interactable Ui;
     private Logable Log;
     private Connectable Conn;
-//    private Transportable Elev;
     public Factory()
     {
         // Load Classes
         Ui = new UI();
         Log = new Logger();
         Conn = new DataConnect();
-//        Elev = new Elevator();
     }
     public Interactable getUI()
     {
@@ -28,9 +26,4 @@ public class Factory
         // return class 'Conn'
         return Conn;
     }
-//    public Transportable getElev()
-//    {
-//        // return class 'Elev'
-//        return Elev;
-//    }
 }

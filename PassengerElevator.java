@@ -1,23 +1,30 @@
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class PassengerElevator extends Elevator
 {
-    private int numPassengers;
-    private final int maxCap;
-    private Map<Integer, Integer> floorDestinations;
-
-    public PassengerElevator(String elevID, int cap )
+    private int occupants;
+    private int directionHeaded;
+    PassengerElevator passenger1 = new PassengerElevator("1", 0, 0);
+    PassengerElevator passenger2 = new PassengerElevator("2", 0, 0);
+    HashMap<String, PassengerElevator> passengerElevatorMap = new HashMap<>();
+    public PassengerElevator(String elevatorID, int occupants, int directionHeaded)
     {
-        super(elevID);
-        maxCap = cap;
-        numPassengers = 0;
-        floorDestinations = new HashMap<>();
+        super(elevatorID);
+        this.occupants = occupants;
+        this.directionHeaded = directionHeaded;
+        loadElevatorMap();
     }
-
-    public String toString()
+    public int getElevatorOccupants()
     {
-        return super.toString() + "passengers: " + numPassengers;
+        return occupants;
+    }
+    public int getDirectionHeaded()
+    {
+        return directionHeaded;
+    }
+    public void loadElevatorMap()
+    {
+        passengerElevatorMap.put("P1", passenger1);
+        passengerElevatorMap.put("P2", passenger2);
     }
 }

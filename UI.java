@@ -18,13 +18,6 @@ public class UI implements Interactable
         // return user input
         return input;
     }
-    public void setDisplayToUser(String display)
-    {
-        // display local variable 'display' information to user
-        System.out.println(display);
-        // set info for getLastEvent to return when called
-        info = "setDisplayToUser" + "displayed: '" + display +"' to user";
-    }
     public String getLastEvent()
     {
         // return info set by other methods
