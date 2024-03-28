@@ -1,25 +1,26 @@
 public class Floor
 {
-    String floorID;
-    int directionCalled;
-    boolean call;
-    public Floor(String floorID, int directionCalled, boolean call)
+    private int directionCalled;
+    private boolean wasCalled;
+    public Floor(int directionCalled, boolean wasCalled)
     {
-        this.floorID = floorID;
         this.directionCalled = directionCalled;
-        this.call = call;
-    }
-    public String getFloorID()
-    {
-        return floorID;
+        this.wasCalled = wasCalled;
     }
     public int getDirectionCalled()
     {
         return directionCalled;
     }
-    public boolean getCall()
+    public void setDirectionCalled(int dirr)
     {
-        return call;
+        this.directionCalled = dirr;
+    }
+    public boolean getWasCalled()
+    {
+        return wasCalled;
+    }
+    public void setWasCalled(boolean call)
+    {
+        this.wasCalled = call;
     }
 }
-

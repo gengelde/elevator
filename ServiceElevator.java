@@ -1,36 +1,78 @@
 import java.util.HashMap;
+public class ServiceElevator {
+    private final int numServiceElevators = 3;
+    private final int numFloors = 10;
+    private int selectedElevator;
+    HashMap<Integer, Elevator> serviceMap = new HashMap<>();
+    HashMap<Integer, Floor> floorMap = new HashMap<>();
 
-public class ServiceElevator extends Elevator
-{
-    private float weight;
-    private int occupants;
-    private int directionHeaded;
-    ServiceElevator service1 = new ServiceElevator("1", 0f, 0, 0);
-    ServiceElevator service2 = new ServiceElevator("2", 0f, 0, 0);
-    HashMap<String, ServiceElevator> serviceElevatorMap = new HashMap<>();
-    public ServiceElevator(String elevatorID, float weight, int occupants, int directionHeaded)
+    public ServiceElevator()
     {
-        super(elevatorID);
-        this.weight = weight;
-        this.occupants = occupants;
-        this.directionHeaded = directionHeaded;
-        loadElevatorMap();
+        loadMaps();
     }
-    public float getElevatorWeight()
-    {
-        return weight;
+
+    public void loadMaps() {
+        for (int i = 0; i < numServiceElevators; i++) {
+            Elevator service = new Elevator(0f, 0, 0, 1);
+            serviceMap.put(i, service);
+        }
+        for (int j = 0; j < numFloors; j++) {
+            Floor floor = new Floor(0, false);
+            floorMap.put(j, floor);
+        }
     }
-    public int getElevatorOccupants()
-    {
-        return occupants;
+
+    public void printMap() {
+        for (int i = 0; i < numFloors; i++) {
+            Floor floor = floorMap.get(i);
+            System.out.println("Floor: " + i + ", Was Called: " + floor.getWasCalled());
+        }
+        for (int j = 0; j < numServiceElevators; j++) {
+            Elevator elevator = serviceMap.get(j);
+            System.out.println("Service Elevator: " + j + ", Weight: " + elevator.getWeight() + ", Occupants: " + elevator.getOccupants() + ", Dirrection Headed: " + elevator.getDirectionHeaded() + ",  Current Floor: " + elevator.getCurrentFloor());
+        }
     }
-    public int getDirectionHeaded()
+
+    public boolean checkStationary()
     {
-        return directionHeaded;
+        for (int j = 0; j < numServiceElevators; j++)
+        {
+            Elevator elevator = serviceMap.get(j);
+            if (elevator.getDirectionHeaded() == 0)
+            {
+                selectedElevator = j;
+                return true;
+            }
+        }
+        return false;
     }
-    public void loadElevatorMap()
+
+    public boolean checkDirection()
     {
-        serviceElevatorMap.put("P1", service1);
-        serviceElevatorMap.put("P2", service2);
+        for (int j = 0; j < numServiceElevators; j++)
+        {
+            Elevator elevator = serviceMap.get(j);
+            for (int i = 0; i < numFloors; i++)
+            {
+                Floor floor = floorMap.get(i);
+                if (elevator.getDirectionHeaded() == floor.getDirectionCalled())
+                {
+                    selectedElevator = j;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+
+    public void checkDistance()
+    {
+
+    }
+    public int getSelectedElevator()
+    {
+        return selectedElevator;
     }
 }
