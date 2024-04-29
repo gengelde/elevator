@@ -1,26 +1,52 @@
-public class Floor implements Floorable
-{
+/**
+ * The Floor class represents a floor object that can track occupants and weight.
+ */
+public class Floor implements Floorable {
+
     private int occupants;
     private float weight;
-    public Floor()
-    {
+
+    /**
+     * Constructs a new Floor object with default values.
+     */
+    public Floor() {
         this.occupants = 0;
         this.weight = 0f;
     }
-    public int getOccupants()
-    {
+
+    /**
+     * Returns the number of occupants for the floor.
+     *
+     * @return The number of occupants for the floor.
+     */
+    public int getOccupants() {
         return occupants;
     }
-    public float getWeight()
-    {
+
+    /**
+     * Returns the total weight for the floor.
+     *
+     * @return The total weight for the floor.
+     */
+    public float getWeight() {
         return weight;
     }
-    public void setOccupants(int newOccupants)
-    {
-        occupants = newOccupants;
+
+    /**
+     * Sets the number of occupants for the floor.
+     *
+     * @param newOccupants The new number of occupants for the floor.
+     */
+    public void setOccupants(int newOccupants) {
+        this.occupants = newOccupants;
     }
-    public void setWeight(float newWeight)
-    {
-        weight = newWeight;
+
+    /**
+     * Sets the total weight for the floor.
+     *
+     * @param newWeight The new total weight for the floor.
+     */
+    public void setWeight(float newWeight) {
+        this.weight = newWeight;
     }
 }

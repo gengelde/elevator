@@ -1,12 +1,23 @@
+/**
+ * The PassengerThread class represents a thread responsible for processing passenger elevator requests.
+ */
 public class PassengerThread implements Runnable
 {
     private Message msg;
     private Mechable passenger;
+    /**
+     * Constructs a new PassengerThread object with a given message.
+     *
+     * @param msg The message containing elevator information.
+     */
     public PassengerThread(Message msg)
     {
         passenger = new PassengerMech();
         this.msg = msg;
     }
+    /**
+     * Runs the passenger thread, continuously checking for passenger elevator requests and processing them.
+     */
     public void run()
     {
         while(true)

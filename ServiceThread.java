@@ -1,12 +1,23 @@
+/**
+ * The ServiceThread class represents a thread responsible for processing service elevator requests.
+ */
 public class ServiceThread implements Runnable
 {
     private Message msg;
     private Mechable service;
+    /**
+     * Constructs a new ServiceThread object with a given message.
+     *
+     * @param msg The message containing elevator information.
+     */
     public ServiceThread(Message msg)
     {
         service = new ServiceMech();
         this.msg = msg;
     }
+    /**
+     * Runs the service thread, continuously checking for service elevator requests and processing them.
+     */
     public void run()
     {
         while(true)

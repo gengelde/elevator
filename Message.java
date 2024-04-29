@@ -1,52 +1,108 @@
-public class Message
-{
+/**
+ * The Message class represents a message object used for communication between elevator components.
+ */
+public class Message {
+
     private int floor = 0;
     private String type = "";
     private int passengers = 0;
     private float weight = 0.0f;
     private String dir = "ST";
-    public Message()
-    {
+
+    /**
+     * Constructs a new Message object with default values.
+     */
+    public Message() {
 
     }
-    public String getFloorDirection()
-    {
+
+    /**
+     * Returns the direction of the floor.
+     *
+     * @return The direction of the floor.
+     */
+    public String getFloorDirection() {
         return dir;
     }
-    public int getFloorID()
-    {
+
+    /**
+     * Returns the ID of the floor.
+     *
+     * @return The ID of the floor.
+     */
+    public int getFloorID() {
         return floor;
     }
-    public String getElevatorType()
-    {
+
+    /**
+     * Returns the type of the elevator.
+     *
+     * @return The type of the elevator.
+     */
+    public String getElevatorType() {
         return type;
     }
-    public float getElevatorWeight()
-    {
+
+    /**
+     * Returns the weight of the elevator.
+     *
+     * @return The weight of the elevator.
+     */
+    public float getElevatorWeight() {
         return weight;
     }
-    public int getElevatorPassengers()
-    {
+
+    /**
+     * Returns the number of passengers in the elevator.
+     *
+     * @return The number of passengers in the elevator.
+     */
+    public int getElevatorPassengers() {
         return passengers;
     }
-    public void setFloorDirection(String temp)
-    {
+
+    /**
+     * Sets the direction of the floor.
+     *
+     * @param temp The new direction of the floor.
+     */
+    public void setFloorDirection(String temp) {
         dir = temp;
     }
-    public void setFloorID(int temp)
-    {
+
+    /**
+     * Sets the ID of the floor.
+     *
+     * @param temp The new ID of the floor.
+     */
+    public void setFloorID(int temp) {
         floor = temp;
     }
-    public void setElevatorType(String temp)
-    {
+
+    /**
+     * Sets the type of the elevator.
+     *
+     * @param temp The new type of the elevator.
+     */
+    public void setElevatorType(String temp) {
         type = temp;
     }
-    public void setElevatorWeight(float temp)
-    {
+
+    /**
+     * Sets the weight of the elevator.
+     *
+     * @param temp The new weight of the elevator.
+     */
+    public void setElevatorWeight(float temp) {
         weight = temp;
     }
-    public void setPassengerAmount(int temp)
-    {
+
+    /**
+     * Sets the number of passengers in the elevator.
+     *
+     * @param temp The new number of passengers in the elevator.
+     */
+    public void setPassengerAmount(int temp) {
         passengers = temp;
     }
 }

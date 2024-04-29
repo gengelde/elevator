@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * The GUI class implements the graphical user interface for the elevator control panel.
+ */
 public class GUI implements ActionListener
 {
     final int FLOORS = 10;
@@ -37,6 +40,11 @@ public class GUI implements ActionListener
     private JPanel TextInputPane;
     private Message msg;
     private Connectable connect = new Connect();
+    /**
+     * Constructs a new GUI object with the specified message.
+     *
+     * @param msg The message object for communication.
+     */
     public GUI(Message msg)
     {
         this.msg = msg;
@@ -137,7 +145,11 @@ public class GUI implements ActionListener
 
         frame.setVisible(true);
     }
-
+    /**
+     * Handles actionPerformed events.
+     *
+     * @param e The ActionEvent object.
+     */
     public void actionPerformed(ActionEvent e)
     {
         elevatorType = textField1.getText();
@@ -203,7 +215,11 @@ public class GUI implements ActionListener
             }
         }
     }
-
+    /**
+     * Populates the call button array with up and down buttons for each floor.
+     *
+     * @param arr The array to populate.
+     */
     public void populateCallButtonArray(JButton[] arr)
     {
         count = 1;
@@ -217,7 +233,11 @@ public class GUI implements ActionListener
             count++;
         }
     }
-
+    /**
+     * Populates the elevator button array with buttons for each destination floor.
+     *
+     * @param arr The array to populate.
+     */
     public void populateElevatorButtonArray(JButton[] arr)
     {
         for( int i = 0; i < FLOORS; i++ )

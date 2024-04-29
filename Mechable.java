@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+/**
+ * The Mechable interface represents the behavior of all three mechanical systems responsible for managing each type of elevator.
+ */
 public interface Mechable
 {
     boolean hasQueues();

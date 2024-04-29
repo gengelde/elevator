@@ -1,5 +1,8 @@
 import java.util.ArrayList;
-
+/**
+ * The Elevatable interface represents the behavior of the elevator object that can track weight,
+ * occupants, current floor, direction headed, elevator queue, and elevator operations.
+ */
 public interface Elevatable
 {
     float getWeight();
@@ -10,8 +13,6 @@ public interface Elevatable
     void setCurrentFloor(int current);
     String getDirectionHeaded();
     void setDirectionHeaded(String direction);
-    int getPresses();
-    void setPresses(int count);
     void addToQueue(int q);
     ArrayList<Integer> getQueue();
 }

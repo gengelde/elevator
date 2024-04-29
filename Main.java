@@ -1,6 +1,14 @@
 import javax.swing.*;
+/**
+ * The Main class contains the main method to start the elevator control system.
+ */
 public class Main
 {
+    /**
+     * The main method to start the elevator control system.
+     *
+     * @param args The command-line arguments (not used).
+     */
     public static void main(String[] args)
     {
         Message msg = new Message();

@@ -1,3 +1,6 @@
+/**
+ * The Floorable interface represents the behavior of the floor object that can track occupants and weight.
+ */
 public interface Floorable
 {
     int getOccupants();

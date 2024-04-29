@@ -1,12 +1,23 @@
+/**
+ * The FreightThread class represents a thread responsible for processing freight elevator requests.
+ */
 public class FreightThread implements Runnable
 {
     private Message msg;
     private Mechable freight;
+    /**
+     * Constructs a new FreightThread object with a given message.
+     *
+     * @param msg The message containing elevator information.
+     */
     public FreightThread(Message msg)
     {
         freight = new FreightMech();
         this.msg = msg;
     }
+    /**
+     * Runs the freight thread, continuously checking for freight elevator requests and processing them.
+     */
     public void run()
     {
         while(true)
