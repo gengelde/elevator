@@ -1,17 +1,30 @@
+import javax.swing.*;
 public class Main
 {
     public static void main(String[] args)
     {
-        UI ui = new UI();
-        ServiceElevator service = new ServiceElevator();
-        Elevator serviceElevator = service.serviceMap.get(1);
-        service.printMap();
-        serviceElevator.setCurrentFloor(Integer.parseInt(ui.getUserInput()));
-        service.printMap();
+        Message msg = new Message();
+        SwingUtilities.invokeLater(() -> {GUI gui = new GUI(msg);});
+        Runnable service = new ServiceThread(msg);
+        Runnable passenger = new PassengerThread(msg);
+        Runnable freight = new FreightThread(msg);
+        Thread t1 = new Thread(service);
+        Thread t2 = new Thread(passenger);
+        Thread t3 = new Thread(freight);
 
-        if (service.checkStationary())
+        try
         {
-            System.out.println("Service elevator: " + service.getSelectedElevator() + " is stationary");
+            t1.start();
+            t2.start();
+            t3.start();
+            t1.join();
+            t2.join();
+            t3.join();
+        }
+        catch (InterruptedException e)
+        {
+            // Print exception message e to console
+            System.out.println(e.getMessage());
         }
     }
 }

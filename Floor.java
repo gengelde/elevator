@@ -1,26 +1,26 @@
-public class Floor
+public class Floor implements Floorable
 {
-    private int directionCalled;
-    private boolean wasCalled;
-    public Floor(int directionCalled, boolean wasCalled)
+    private int occupants;
+    private float weight;
+    public Floor()
     {
-        this.directionCalled = directionCalled;
-        this.wasCalled = wasCalled;
+        this.occupants = 0;
+        this.weight = 0f;
     }
-    public int getDirectionCalled()
+    public int getOccupants()
     {
-        return directionCalled;
+        return occupants;
     }
-    public void setDirectionCalled(int dirr)
+    public float getWeight()
     {
-        this.directionCalled = dirr;
+        return weight;
     }
-    public boolean getWasCalled()
+    public void setOccupants(int newOccupants)
     {
-        return wasCalled;
+        occupants = newOccupants;
     }
-    public void setWasCalled(boolean call)
+    public void setWeight(float newWeight)
     {
-        this.wasCalled = call;
+        weight = newWeight;
     }
 }
