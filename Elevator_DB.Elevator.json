@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "662f3628c11a422658fcfb6b"
+  },
+  "ID": 1,
+  "Name": "John",
+  "Destination": 2,
+  "Access": "Guest"
+},
+{
+  "_id": {
+    "$oid": "662f3628c11a422658fcfb6c"
+  },
+  "ID": 2,
+  "Name": "Alice",
+  "Destination": 5,
+  "Access": "Guest"
+},
+{
+  "_id": {
+    "$oid": "662f3628c11a422658fcfb6d"
+  },
+  "ID": 3,
+  "Name": "Bob",
+  "Destination": 9,
+  "Access": "Guest"
+},
+{
+  "_id": {
+    "$oid": "662f6399c11a422658fcfb70"
+  },
+  "ID": 4,
+  "Name": "Mark",
+  "Destination": 6,
+  "Access": "Employee"
+},
+{
+  "_id": {
+    "$oid": "662f6399c11a422658fcfb71"
+  },
+  "ID": 5,
+  "Name": "Ian",
+  "Destination": 1,
+  "Access": "Employee"
+}]

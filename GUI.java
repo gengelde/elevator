@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
  */
 public class GUI implements ActionListener
 {
-    final int FLOORS = 10;
+    private final int FLOORS = 10;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
